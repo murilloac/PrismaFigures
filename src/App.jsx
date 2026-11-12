@@ -4,10 +4,12 @@ import Configuracoes from './components/Configuracoes'
 import Materiais from './components/Materiais'
 import NovaCotacao from './components/NovaCotacao'
 import Historico from './components/Historico'
+import Caixa from './components/Caixa'
 
 const ABAS = [
   { id: 'cotacao', label: '+ Nova Cotação' },
   { id: 'historico', label: 'Histórico' },
+  { id: 'caixa', label: 'Caixa' },
   { id: 'materiais', label: 'Materiais' },
   { id: 'config', label: 'Configurações' },
 ]
@@ -39,6 +41,7 @@ function AppInner() {
       <main>
         {aba === 'cotacao' && <NovaCotacao onSalva={() => {}} />}
         {aba === 'historico' && <Historico />}
+        {aba === 'caixa' && <Caixa />}
         {aba === 'materiais' && <Materiais />}
         {aba === 'config' && <Configuracoes />}
       </main>

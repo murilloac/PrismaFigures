@@ -232,3 +232,74 @@ input::placeholder { color: var(--text-dim); }
 .grid-resumo span { font-size: 11px; color: var(--text-dim); }
 .grid-resumo strong { font-size: 15px; color: #fff; }
 @media (max-width: 480px) { .grid-resumo { grid-template-columns: 1fr 1fr; } }
+
+/* Caixa */
+.caixa-resumo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.caixa-card {
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid var(--border);
+}
+.caixa-card span { font-size: 12px; color: var(--text-dim); }
+.caixa-card strong { font-size: 20px; font-weight: 700; }
+.caixa-card.verde { background: rgba(34,197,94,.08); border-color: rgba(34,197,94,.3); }
+.caixa-card.verde strong { color: var(--green); }
+.caixa-card.vermelho { background: rgba(239,68,68,.08); border-color: rgba(239,68,68,.3); }
+.caixa-card.vermelho strong { color: var(--red); }
+.caixa-card.roxo { background: var(--accent-glow); border-color: var(--accent); }
+.caixa-card.roxo strong { color: var(--accent); }
+@media (max-width: 480px) { .caixa-resumo { grid-template-columns: 1fr; } }
+
+.tipo-toggle { display: flex; gap: 8px; }
+.toggle-btn {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all .15s;
+}
+.toggle-btn.ativo-verde { background: rgba(34,197,94,.12); border-color: var(--green); color: var(--green); }
+.toggle-btn.ativo-vermelho { background: rgba(239,68,68,.12); border-color: var(--red); color: var(--red); }
+
+.caixa-filtros { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 480px) { .caixa-filtros { grid-template-columns: 1fr; } }
+
+.valor-verde { color: var(--green); font-weight: 600; }
+.valor-vermelho { color: var(--red); font-weight: 600; }
+.text-dim { color: var(--text-dim); }
+
+.badge-cat {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2px 8px;
+  font-size: 11px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.cat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 4px; }
+.cat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg3);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+.cat-item span { color: var(--text-dim); }
+@media (max-width: 480px) { .cat-grid { grid-template-columns: 1fr; } }

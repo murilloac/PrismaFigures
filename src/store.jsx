@@ -36,6 +36,7 @@ export function StoreProvider({ children }) {
   const [config, setConfigRaw] = useState(() => load('pf_config', DEFAULT_CONFIG))
   const [materiais, setMateriaisRaw] = useState(() => load('pf_materiais', []))
   const [cotacoes, setCotacoesRaw] = useState(() => load('pf_cotacoes', []))
+  const [lancamentos, setLancamentosRaw] = useState(() => load('pf_lancamentos', []))
 
   function setConfig(v) {
     const next = typeof v === 'function' ? v(config) : v
@@ -63,8 +64,22 @@ export function StoreProvider({ children }) {
     setCotacoes(prev => prev.filter(c => c.id !== id))
   }
 
+  function setLancamentos(v) {
+    const next = typeof v === 'function' ? v(lancamentos) : v
+    setLancamentosRaw(next)
+    save('pf_lancamentos', next)
+  }
+
+  function addLancamento(l) {
+    setLancamentos(prev => [l, ...prev])
+  }
+
+  function deletarLancamento(id) {
+    setLancamentos(prev => prev.filter(l => l.id !== id))
+  }
+
   return (
-    <Ctx.Provider value={{ config, setConfig, materiais, setMateriais, cotacoes, salvarCotacao, deletarCotacao }}>
+    <Ctx.Provider value={{ config, setConfig, materiais, setMateriais, cotacoes, salvarCotacao, deletarCotacao, lancamentos, addLancamento, deletarLancamento }}>
       {children}
     </Ctx.Provider>
   )

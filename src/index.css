@@ -52,8 +52,7 @@ body {
   color: #fff;
   white-space: nowrap;
 }
-.logo-icon { font-size: 22px; color: var(--accent); }
-.logo small { font-size: 11px; font-weight: 400; color: var(--text-dim); margin-left: 4px; }
+.logo-img { height: 48px; width: auto; object-fit: contain; }
 
 .nav { display: flex; gap: 4px; flex-wrap: wrap; padding: 8px 0; }
 .nav-btn {

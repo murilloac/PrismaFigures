@@ -21,9 +21,7 @@ function AppInner() {
     <div className="app">
       <header className="app-header">
         <div className="logo">
-          <span className="logo-icon">◈</span>
-          <span>Prisma Figures</span>
-          <small>Precificação 3D</small>
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Prisma Figures" className="logo-img" />
         </div>
         <nav className="nav">
           {ABAS.map(a => (
